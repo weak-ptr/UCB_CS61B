@@ -1,8 +1,24 @@
+# CLion 项目忽略规则
+.idea/
+cmake-build-*/
+
+# 保留所有 C++ 文件
+!*.c
+!*.cpp
+!*.hpp
+!*.h
+!*.cxx
+
+# 通用忽略规则
+*.o
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
 *
 !*/
-!**.C
-!**.c++
-!**.cpp
 !**.java
 !**.txt
 !**.json
