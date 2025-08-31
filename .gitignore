@@ -1,13 +1,14 @@
+*
+!*/
+
 # CLion 项目忽略规则
+.vscode/
 .idea/
 cmake-build-*/
-
-# 保留所有 C++ 文件
-!*.c
-!*.cpp
-!*.hpp
-!*.h
-!*.cxx
+*.iml
+out/
+.idea_modules/
+.nb-gradle/
 
 # 通用忽略规则
 *.o
@@ -16,10 +17,19 @@ cmake-build-*/
 *.a
 *.so
 *.dll
+*.class
+*.jar
+*.war
+*.ear
+*.pyc
 
-*
-!*/
 !**.java
+# 保留所有 C++ 文件
+!**.c
+!**.cpp
+!**.hpp
+!**.h
+!**.cxx
 !**.txt
 !**.json
 !**/pom.xml
