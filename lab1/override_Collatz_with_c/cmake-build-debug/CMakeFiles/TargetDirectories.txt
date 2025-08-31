@@ -1,0 +1,3 @@
+D:/UCB/CS61B/Lab/lab1/override_Collatz_with_c/cmake-build-debug/CMakeFiles/override_Collatz_with_c.dir
+D:/UCB/CS61B/Lab/lab1/override_Collatz_with_c/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/UCB/CS61B/Lab/lab1/override_Collatz_with_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
