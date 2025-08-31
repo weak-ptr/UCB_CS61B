@@ -1,0 +1,1 @@
+all c++ file use command "g++ -std=c++17 file_name.cpp -o file_name" to compile.
