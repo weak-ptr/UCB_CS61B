@@ -7,7 +7,11 @@ public class Tile {
 
     /** A new tile with VALUE as its value at (ROW, COL).  This
      *  constructor is private, so all tiles are created by the
-     *  factory methods create, move, and merge. */
+     *  factory methods create, move, and merge.
+     *  疑问：
+     *  1，next表示什么意思？
+     *    next好像指向下一个状态，目前发生移动和合并后都会设置next
+     *  */
     private Tile(int value, int col, int row) {
         this.value = value;
         this.row = row;
@@ -51,8 +55,13 @@ public class Tile {
     /** Return the result of merging OTHERTILE with me after moving to
      *  (COL, ROW). */
     public Tile merge(int col, int row, Tile otherTile) {
+        //  只有在value相等时才能合并，这儿是个检查。（但是检查为什么用assert，这不是断言吗？）
         assert value == otherTile.value();
+
+        //  生成了一个新的tile，两个旧的tile.next都指向了新tile
         next = otherTile.next = new Tile(2 * value, col, row);
+
+        //  返回新生成的tile
         return next;
     }
 

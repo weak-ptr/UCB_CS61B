@@ -58,7 +58,7 @@ public class Model extends Observable {
         return board.size();
     }
 
-    /** Return true iff the game is over (there are no moves, or
+    /** Return true if the game is over (there are no moves, or
      *  there is a tile with value 2048 on the board). */
     public boolean gameOver() {
         checkGameOver();

@@ -6,7 +6,7 @@ import static game2048.Side.*;
  *  @author P. N. Hilfinger. */
 public class Game {
 
-    /** Controller for a game represented by MODEL, using SOURCE as the
+    /** Controller for a game represented by MODEL, using SOURCE as
      *  the source of key inputs and random Tiles. */
     public Game(Model model, InputSource source) {
         _model = model;
@@ -23,8 +23,13 @@ public class Game {
      *  new-game request.  Update the viewer with each added tile or
      *  change in the board from tilting. */
     void playGame() {
+        //  开始游戏，清零。
         _model.clear();
+
+        //  随机生成新的tile，并加入到面板中
         _model.addTile(getValidNewTile());
+
+
         while (_playing) {
             if (!_model.gameOver()) {
                 _model.addTile(getValidNewTile());
