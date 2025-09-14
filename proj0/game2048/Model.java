@@ -180,14 +180,79 @@ public class Model extends Observable {
     }
 
     /**
+     * @param index the index which need be checked.
+     * @param b board which support b.size()
+     * @return If 0<= index <= b.size(), return ture. otherwise return false.
+     */
+    public static boolean isIndexValid(int index, Board b) {
+        return 0 <= index && index < b.size();
+    }
+
+    /**
+     *
+     * @param b
+     * @param r1
+     * @param c1
+     * @param r2
+     * @param c2
+     * @return
+     */
+    public static boolean tryMergeTwoTile(Board b, int r1, int c1, int r2, int c2) {
+        boolean status = false;
+
+        if (isIndexValid(r1, b) && isIndexValid(c1, b) && isIndexValid(r2, b) && isIndexValid(c2, b)) {
+            if (b.tile(c1, r1).value() == b.tile(c2, r2).value())
+                status = true;
+        }
+
+        return status;
+    }
+
+    /**
+     *
+     * @param b
+     * @return
+     */
+    public static boolean isTherePotentialMergingExists(Board b) {
+        boolean status = false;
+        int size = b.size();
+        int square_size = size * size;
+
+        for (int count = 0; count < square_size; count += 1) {
+            int row = count / size;
+            int col = count % size;
+
+            int up_col = col - 1;
+            int down_col = col + 1;
+            int left_row = row - 1;
+            int right_row = row + 1;
+
+            if (       tryMergeTwoTile(b, row, col, row, up_col)
+                    || tryMergeTwoTile(b, row, col, row, down_col)
+                    || tryMergeTwoTile(b, row, col, left_row, col)
+                    || tryMergeTwoTile(b, row, col, right_row, col)) {
+                status = true;
+                break;
+            }
+        }
+
+        return status;
+    }
+
+    /**
      * Returns true if there are any valid moves on the board.
      * There are two ways that there can be valid moves:
      * 1. There is at least one empty space on the board.
      * 2. There are two adjacent tiles with the same value.
      */
     public static boolean atLeastOneMoveExists(Board b) {
-        // TODO: Fill in this function.
-        return false;
+        boolean status = false;
+
+        if (emptySpaceExists(b) || isTherePotentialMergingExists(b)) {
+            status = true;
+        }
+
+        return status;
     }
 
 

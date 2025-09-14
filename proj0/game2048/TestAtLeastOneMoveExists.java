@@ -29,9 +29,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertTrue("A tilt in any direction will change the board "
-                        + "(there is empty space on the board)\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertTrue("A tilt in any direction will change the board " + "(there is empty space on the board)\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -45,9 +43,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertTrue("A tilt in any direction will change the board\n"
-                        + b,
-                Model.atLeastOneMoveExists(b));
+        assertTrue("A tilt in any direction will change the board\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -61,8 +57,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertTrue("A tilt left or right will change the board\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertTrue("A tilt left or right will change the board\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -76,8 +71,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertTrue("A tilt up or down will change the board\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertTrue("A tilt up or down will change the board\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -94,9 +88,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertTrue("A tilt in any direction will change the board\n"
-                        + b,
-                Model.atLeastOneMoveExists(b));
+        assertTrue("A tilt in any direction will change the board\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -110,8 +102,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertFalse("No move exists\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertFalse("No move exists\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -125,8 +116,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertFalse("No move exists\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertFalse("No move exists\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -140,8 +130,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertFalse("No move exists\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertFalse("No move exists\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -155,8 +144,7 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertFalse("No move exists\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertFalse("No move exists\n" + b, Model.atLeastOneMoveExists(b));
     }
 
     @Test
@@ -170,7 +158,40 @@ public class TestAtLeastOneMoveExists {
         };
 
         b = new Board(rawVals, 0);
-        assertFalse("No move exists\n" + b,
-                Model.atLeastOneMoveExists(b));
+        assertFalse("No move exists\n" + b, Model.atLeastOneMoveExists(b));
+    }
+
+    @Test
+    /** Tests Model.isIndexValid() method which is Helper method of Model.atLeastOneMoveExists(). */
+    public void testIsIndexValid() {
+        int[][] rawVals = new int[][] {
+                {8, 16, 2, 32},
+                {32, 2, 64, 2},
+                {2, 256, 128, 256},
+                {1024, 8, 4, 2},
+        };
+
+        b = new Board(rawVals, 0);
+
+        assertFalse(Model.isIndexValid(-1, b));
+        assertTrue(Model.isIndexValid(0, b));
+        assertTrue(Model.isIndexValid(1, b));
+        assertTrue(Model.isIndexValid(2, b));
+        assertTrue(Model.isIndexValid(3, b));
+        assertFalse(Model.isIndexValid(4, b));
+    }
+
+    @Test
+    /**  Tests Model.isTherePotentialMergingExists() method */
+    public void testIsTherePotentialMergingExists() {
+        int[][] rawVals = new int[][] {
+                {8, 16, 2, 32},
+                {32, 2, 64, 2},
+                {2, 256, 128, 256},
+                {1024, 8, 4, 2},
+        };
+
+        b = new Board(rawVals, 0);
+        Model.isTherePotentialMergingExists(b);
     }
 }
