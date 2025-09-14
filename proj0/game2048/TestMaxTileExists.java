@@ -54,8 +54,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("One 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("One 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
     @Test
@@ -70,8 +69,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("Two 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("Two 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
     @Test
@@ -86,8 +84,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("One 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("One 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
     @Test
@@ -102,8 +99,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("One 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("One 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
     @Test
@@ -118,8 +114,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("One 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("One 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
     @Test
@@ -134,8 +129,7 @@ public class TestMaxTileExists {
 
         b = new Board(rawVals, 0);
 
-        assertTrue("One 2048 tile on board\n" + b,
-                Model.maxTileExists(b));
+        assertTrue("One 2048 tile on board\n" + b, Model.maxTileExists(b));
     }
 
 }
